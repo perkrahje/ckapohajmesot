@@ -4,184 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CKA PO HAJME SOT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
-      --gold: #c9a84c;
-      --gold-light: #e8c97a;
-      --dark: #0d0d0d;
-      --text: #f0ead8;
-      --muted: #8a8070;
+      --bg: #f7f6f3;
+      --text: #111;
+      --subtle: #999;
+      --accent: #111;
+      --line: #ddd;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+    }
 
     body {
+      background: var(--bg);
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       min-height: 100vh;
-      background-color: var(--dark);
+    }
+
+    .wrapper {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Montserrat', sans-serif;
-      overflow: hidden;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 50%, #1e1a10 0%, var(--dark) 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .card {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 70px 80px;
-      animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
       opacity: 0;
+      transform: translateY(16px);
+      animation: appear 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
     }
 
-    .card::before, .card::after {
-      content: '';
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      border-color: var(--gold);
-      border-style: solid;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 0.8s;
-      opacity: 0;
-    }
-    .card::before { top: 0; left: 0; border-width: 1px 0 0 1px; }
-    .card::after  { bottom: 0; right: 0; border-width: 0 1px 1px 0; }
-
-    .corner-tr, .corner-bl {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      border-color: var(--gold);
-      border-style: solid;
-      opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 0.8s;
-    }
-    .corner-tr { top: 0; right: 0; border-width: 1px 1px 0 0; }
-    .corner-bl { bottom: 0; left: 0; border-width: 0 0 1px 1px; }
-
-    .ornament {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      margin-bottom: 36px;
-      opacity: 0;
-      animation: fadeIn 1.4s ease forwards;
-      animation-delay: 0.5s;
-    }
-    .ornament-line {
-      width: 60px; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold));
-    }
-    .ornament-line.right { background: linear-gradient(90deg, var(--gold), transparent); }
-    .ornament-diamond {
-      width: 6px; height: 6px;
-      background: var(--gold);
-      transform: rotate(45deg);
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      color: var(--subtle);
+      text-transform: uppercase;
+      margin-bottom: 14px;
     }
 
     .name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 200;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 28px;
+    }
+
+    .rule {
+      width: 100%;
+      height: 1px;
+      background: var(--line);
+      margin-bottom: 20px;
+    }
+
+    .email-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text);
+      flex-shrink: 0;
+    }
+
+    .email a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
       font-weight: 300;
       color: var(--text);
-      letter-spacing: 0.12em;
-      line-height: 1.1;
-      margin-bottom: 8px;
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 0.2s;
-    }
-    .name em { font-style: italic; color: var(--gold-light); }
-
-    .divider {
-      width: 1px; height: 40px;
-      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-      margin: 28px auto;
-      opacity: 0;
-      animation: fadeIn 1.2s ease forwards;
-      animation-delay: 0.6s;
-    }
-
-    .label {
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.35em;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 0.7s;
-    }
-
-    .email {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1rem, 2.5vw, 1.35rem);
-      font-weight: 300;
-      font-style: italic;
-      letter-spacing: 0.06em;
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 0.85s;
-    }
-    .email a {
-      color: var(--gold-light);
       text-decoration: none;
-      position: relative;
-      transition: color 0.3s;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 1px;
+      transition: border-color 0.25s ease;
     }
-    .email a::after {
-      content: '';
-      position: absolute;
-      bottom: -3px; left: 0;
-      width: 0; height: 1px;
-      background: var(--gold-light);
-      transition: width 0.4s ease;
-    }
-    .email a:hover { color: #fff; }
-    .email a:hover::after { width: 100%; }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .email a:hover {
+      border-color: var(--text);
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+
+    @keyframes appear {
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="corner-tr"></div>
-    <div class="corner-bl"></div>
-
-    <div class="ornament">
-      <div class="ornament-line"></div>
-      <div class="ornament-diamond"></div>
-      <div class="ornament-line right"></div>
-    </div>
-
-    <div class="name"><em>CKA PO HAJME SOT</em></div>
-
-    <div class="divider"></div>
-
-    <div class="label">Contact</div>
-    <div class="email">
-      <a href="mailto:info@ckapohajmesot.com">info@ckapohajmesot.com</a>
+  <div class="wrapper">
+    <div class="tag">— Est. today</div>
+    <div class="name">CKA PO<br>HAJME SOT</div>
+    <div class="rule"></div>
+    <div class="email-row">
+      <div class="dot"></div>
+      <div class="email">
+        <a href="mailto:info@ckapohajmesot.com">info@ckapohajmesot.com</a>
+      </div>
     </div>
   </div>
 </body>
