@@ -130,6 +130,61 @@
       color: var(--accent);
     }
 
+    /* Special offers */
+    .special { padding-bottom: 3rem; }
+
+    .special-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .special-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .special-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .special .card {
+      border-top: 3px solid var(--accent);
+      padding: 2rem 1.75rem;
+    }
+
+    .special .card h3 {
+      font-size: 1.35rem;
+    }
+
+    .special .card .new {
+      font-size: 1.6rem;
+    }
+
+    .top-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      background: var(--accent);
+      border-radius: 999px;
+      padding: 0.22rem 0.65rem;
+      white-space: nowrap;
+    }
+
+    .special .card .zone-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
     /* Zones */
     .zones { padding-bottom: 4rem; }
 
@@ -281,11 +336,11 @@
     }
 
     @media (max-width: 900px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
+      .grid, .special-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 600px) {
-      .grid { grid-template-columns: 1fr; }
+      .grid, .special-grid { grid-template-columns: 1fr; }
       .hero { padding: 3rem 0 2rem; }
     }
   </style>
@@ -308,6 +363,62 @@
         <span>11 zona</span>
         <span>brenda 5 km</span>
         <span>dërgesa nga €0</span>
+      </div>
+    </section>
+
+    <section class="special">
+      <h2 class="special-title">Ofertat speciale</h2>
+      <p class="special-sub">6 ofertat më të mira — një nga secila zonë</p>
+      <div class="special-grid">
+
+        <article class="card">
+          <div class="card-top"><div class="category">Burger</div><span class="top-badge">TOP</span></div>
+          <h3>Bronx Burger</h3>
+          <p class="offer">Tuna Melt Deal — 2 Tuna Melt + 2 frëngji + 2 kola</p>
+          <div class="price"><span class="new">€13,98</span></div>
+          <div class="zone-label">Qendër · 0–1 km</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="category">Pita · Gjiros</div><span class="top-badge">TOP</span></div>
+          <h3>Papa's Pita Qafa</h3>
+          <p class="offer">Korfu</p>
+          <div class="price"><span class="old">€6,20</span><span class="new">€4,00</span></div>
+          <div class="zone-label">Te Qafa · ≈1,5 km</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="category">Pulë</div><span class="top-badge">TOP</span></div>
+          <h3>KFC Pejton</h3>
+          <p class="offer">Duo Bucket</p>
+          <div class="price"><span class="old">€12,36</span><span class="new">€9,99</span></div>
+          <div class="zone-label">Pejton · ≈2 km</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="category">Biftek</div><span class="top-badge">TOP</span></div>
+          <h3>Sarajeva Steak House Rruga B</h3>
+          <p class="offer">Jeff për Qeff — zbritje 40%</p>
+          <div class="price"><span class="new">Deri në -40%</span></div>
+          <div class="zone-label">Rruga B · ≈2,2 km</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="category">Bakery</div><span class="top-badge">TOP</span></div>
+          <h3>Artizan</h3>
+          <p class="offer">Combo Pule — ofertë e re</p>
+          <div class="price"><span class="old">€5,50</span><span class="new">€4,40</span></div>
+          <div class="zone-label">Bregu i Diellit · ≈2,8 km</div>
+        </article>
+
+        <article class="card">
+          <div class="card-top"><div class="category">Picë</div><span class="top-badge">TOP</span></div>
+          <h3>Pano Pizza</h3>
+          <p class="offer">Oferta n'Tavë — 2 Tavë Vegjetariane + sallatë mix + 2 Tomeloriz + 2 kola</p>
+          <div class="price"><span class="new">€19,00</span></div>
+          <div class="zone-label">Albi Mall · ≈5 km</div>
+        </article>
+
       </div>
     </section>
 
