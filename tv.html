@@ -240,6 +240,36 @@
       text-decoration: underline;
     }
 
+    .whatsapp {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: #25d366;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 0.75rem 1.5rem;
+      transition: background 0.2s ease;
+    }
+    .whatsapp-btn:hover {
+      background: #1eb856;
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    .whatsapp .number {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--border);
@@ -353,7 +383,14 @@
 
     <section class="contact">
       <h2>Kontakt</h2>
-      <p>Për pyetje ose aktivizim: <a href="mailto:info@ckapohajmesot.com">info@ckapohajmesot.com</a></p>
+      <p>Për pyetje ose aktivizim, shkruajmë në WhatsApp:</p>
+      <div class="whatsapp">
+        <a class="whatsapp-btn" href="https://wa.me/4915566440167?text=P%C3%ABrsh%C3%ABndetje!%20Dua%20informacion%20rreth%20abonimit%20TV." target="_blank" rel="noopener">
+          💬 WhatsApp Suport
+        </a>
+        <div class="number">+49 155 66440167</div>
+      </div>
+      <p>Rreth abonimeve: <a href="mailto:info@ckapohajmesot.com">info@ckapohajmesot.com</a></p>
     </section>
 
     <footer>
