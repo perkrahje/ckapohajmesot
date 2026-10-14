@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Çka po hajmë sot? — 53 oferta në Prishtinë</title>
-  <meta name="description" content="53 oferta aktive nga restorantet e Prishtinës, të grupuara sipas zonave brenda 5 km." />
+  <title>Çka po hajmë sot?</title>
+  <meta name="description" content="Çka po hajmë sot? — ofertat ditore nga restorantet e Prishtinës, të grupuara sipas zonave, brenda 5 km." />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -29,7 +29,7 @@
     }
 
     .container {
-      max-width: 1080px;
+      max-width: 820px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
@@ -52,6 +52,8 @@
       font-size: clamp(1.4rem, 4vw, 1.9rem);
       font-weight: 900;
       letter-spacing: -0.01em;
+      color: var(--text);
+      text-decoration: none;
     }
     .brand em { font-style: italic; font-weight: 700; }
 
@@ -65,7 +67,7 @@
 
     /* Hero */
     .hero {
-      padding: 4rem 0 2.5rem;
+      padding: 4rem 0 3.5rem;
       text-align: center;
     }
 
@@ -106,207 +108,92 @@
       padding: 0.35rem 0.9rem;
     }
 
-    /* Zone chips */
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.5rem 0 3rem;
-    }
+    /* Sections */
+    section.block { padding: 2.5rem 0; }
 
-    .chips a {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text);
-      text-decoration: none;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 0.4rem 0.95rem;
-      transition: border-color 0.2s ease, color 0.2s ease;
-    }
-    .chips a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* Special offers */
-    .special { padding-bottom: 3rem; }
-
-    .special-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .special-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-
-    .special-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-
-    .special .card {
-      border-top: 3px solid var(--accent);
-      padding: 2rem 1.75rem;
-    }
-
-    .special .card h3 {
-      font-size: 1.35rem;
-    }
-
-    .special .card .new {
-      font-size: 1.6rem;
-    }
-
-    .top-badge {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: #ffffff;
-      background: var(--accent);
-      border-radius: 999px;
-      padding: 0.22rem 0.65rem;
-      white-space: nowrap;
-    }
-
-    .special .card .zone-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 0.5rem;
-    }
-
-    /* Zones */
-    .zones { padding-bottom: 4rem; }
-
-    .zone-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 2.75rem 0 1.25rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--border);
-      scroll-margin-top: 1.5rem;
-    }
-    .zone-head:first-of-type { margin-top: 0; }
-
-    .zone-head h2 {
+    .block h2 {
       font-family: 'Playfair Display', serif;
       font-size: 1.45rem;
       font-weight: 700;
+      margin-bottom: 0.75rem;
     }
 
-    .dist {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .block p {
       color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 40rem;
     }
 
-    .grid {
+    /* How it works */
+    .steps {
+      margin-top: 1.25rem;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+      gap: 1rem;
     }
 
-    /* Cards */
-    .card {
+    .step {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .step .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--accent);
+      min-width: 2rem;
+    }
+
+    .step h3 {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .step p {
+      font-size: 0.88rem;
+      margin-top: 0.15rem;
+    }
+
+    /* Zones */
+    .zones-list {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .zones-list span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.4rem 1.3rem;
+      border-radius: 999px;
+      padding: 0.4rem 0.95rem;
+    }
+
+    /* Contact */
+    .contact-links {
+      margin-top: 1rem;
       display: flex;
       flex-direction: column;
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-    .card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
+      gap: 0.4rem;
     }
 
-    .card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      margin-bottom: 0.7rem;
+    .contact-links a {
+      color: var(--text);
+      font-size: 0.98rem;
+      text-decoration: none;
+      width: fit-content;
     }
-
-    .card .category {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .badge {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: #ffffff;
-      background: var(--accent);
-      border-radius: 999px;
-      padding: 0.2rem 0.6rem;
-      white-space: nowrap;
-    }
-
-    .badge.free {
-      background: #1a7f4b;
-    }
-
-    .card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      line-height: 1.25;
-    }
-
-    .card .offer {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.3rem;
-    }
-
-    .card .price {
-      margin-top: auto;
-      padding-top: 1rem;
-      display: flex;
-      align-items: baseline;
-      gap: 0.55rem;
-      flex-wrap: wrap;
-    }
-
-    .price .old {
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-decoration: line-through;
-    }
-
-    .price .new {
-      font-size: 1.2rem;
-      font-weight: 600;
+    .contact-links a:hover {
       color: var(--accent);
-    }
-
-    .card .meta {
-      margin-top: 0.4rem;
-      font-size: 0.75rem;
-      color: var(--muted);
+      text-decoration: underline;
     }
 
     /* Footer */
     footer {
+      margin-top: 2rem;
       border-top: 1px solid var(--border);
       padding: 2rem 0 2.5rem;
     }
@@ -335,13 +222,8 @@
       max-width: 26rem;
     }
 
-    @media (max-width: 900px) {
-      .grid, .special-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
     @media (max-width: 600px) {
-      .grid, .special-grid { grid-template-columns: 1fr; }
-      .hero { padding: 3rem 0 2rem; }
+      .hero { padding: 3rem 0 2.5rem; }
     }
   </style>
 </head>
@@ -356,602 +238,77 @@
     </header>
 
     <section class="hero">
-      <h1>53 oferta në <em>Prishtinë</em></h1>
-      <p>Ofertat aktive nga restorantet e Prishtinës — të grupuara sipas zonave, brenda një rrezja 5 km.</p>
+      <h1>Çka po <em>hajmë</em> sot?</h1>
+      <p>Një faqe e thjeshtë që mbledh ofertat ditore nga restorantet e Prishtinës dhe i grupon sipas zonave — brenda një rreze 5 km.</p>
       <div class="stats">
-        <span>53 oferta</span>
+        <span>Që nga 2010</span>
         <span>11 zona</span>
         <span>brenda 5 km</span>
-        <span>dërgesa nga €0</span>
       </div>
     </section>
 
-    <section class="special">
-      <h2 class="special-title">Ofertat speciale</h2>
-      <p class="special-sub">6 ofertat më të mira — një nga secila zonë</p>
-      <div class="special-grid">
+    <section class="block" id="rreth-nesh">
+      <h2>Rreth nesh</h2>
+      <p>Çka po hajmë sot? është një projekt i themeluar në 2010 me një qëllim të thjeshtë: të tregojë çka po hajmë sot. Faqja mbledh ofertat aktive nga restorantet e Prishtinës, i grupon sipas zonave dhe i paraqet në një vend të vetëm — pa kërkuar, pa humbur kohë. Më saktë: ndihmon të gjesh ofertën më të mirë pranë teje, sot.</p>
+    </section>
 
-        <article class="card">
-          <div class="card-top"><div class="category">Burger</div><span class="top-badge">TOP</span></div>
-          <h3>Bronx Burger</h3>
-          <p class="offer">Tuna Melt Deal — 2 Tuna Melt + 2 frëngji + 2 kola</p>
-          <div class="price"><span class="new">€13,98</span></div>
-          <div class="zone-label">Qendër · 0–1 km</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pita · Gjiros</div><span class="top-badge">TOP</span></div>
-          <h3>Papa's Pita Qafa</h3>
-          <p class="offer">Korfu</p>
-          <div class="price"><span class="old">€6,20</span><span class="new">€4,00</span></div>
-          <div class="zone-label">Te Qafa · ≈1,5 km</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pulë</div><span class="top-badge">TOP</span></div>
-          <h3>KFC Pejton</h3>
-          <p class="offer">Duo Bucket</p>
-          <div class="price"><span class="old">€12,36</span><span class="new">€9,99</span></div>
-          <div class="zone-label">Pejton · ≈2 km</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Biftek</div><span class="top-badge">TOP</span></div>
-          <h3>Sarajeva Steak House Rruga B</h3>
-          <p class="offer">Jeff për Qeff — zbritje 40%</p>
-          <div class="price"><span class="new">Deri në -40%</span></div>
-          <div class="zone-label">Rruga B · ≈2,2 km</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Bakery</div><span class="top-badge">TOP</span></div>
-          <h3>Artizan</h3>
-          <p class="offer">Combo Pule — ofertë e re</p>
-          <div class="price"><span class="old">€5,50</span><span class="new">€4,40</span></div>
-          <div class="zone-label">Bregu i Diellit · ≈2,8 km</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Picë</div><span class="top-badge">TOP</span></div>
-          <h3>Pano Pizza</h3>
-          <p class="offer">Oferta n'Tavë — 2 Tavë Vegjetariane + sallatë mix + 2 Tomeloriz + 2 kola</p>
-          <div class="price"><span class="new">€19,00</span></div>
-          <div class="zone-label">Albi Mall · ≈5 km</div>
-        </article>
-
+    <section class="block" id="si-funksionon">
+      <h2>Si funksionon</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <h3>Zgjidh zonën</h3>
+            <p>Ofertat grupohen sipas zonave të Prishtinës, fillimisht atyre më të afërta me ty.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <h3>Krahasoni ofertat</h3>
+            <p>Shiko çmimet, zbritjet dhe kohën e dërgesës — të gjitha në të njëjtën faqe.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <h3>Porosit</h3>
+            <p>Porositë bëhen direkt nëpërmjet platformave Wolt dhe Kupohajna.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <nav class="chips">
-      <a href="#qender">Qendër</a>
-      <a href="#te-qafa">Te Qafa</a>
-      <a href="#pejton">Pejton</a>
-      <a href="#rruga-b">Rruga B</a>
-      <a href="#dardani">Dardani</a>
-      <a href="#bregu">Bregu i Diellit</a>
-      <a href="#arberia">Arbëria</a>
-      <a href="#lakrishte">Lakrishtë</a>
-      <a href="#veternik">Veternik</a>
-      <a href="#royal-mall">Royal Mall</a>
-      <a href="#albi-mall">Albi Mall</a>
-    </nav>
-
-    <section class="zones">
-
-      <div class="zone-head" id="qender">
-        <h2>Qendër</h2>
-        <span class="dist">0–1 km</span>
+    <section class="block" id="zonat">
+      <h2>Zona të mbuluara</h2>
+      <p>Ofertat mbulohen brenda një rreze 5 km nga qendra e Prishtinës.</p>
+      <div class="zones-list">
+        <span>Qendër</span>
+        <span>Te Qafa</span>
+        <span>Pejton</span>
+        <span>Rruga B</span>
+        <span>Dardani</span>
+        <span>Bregu i Diellit</span>
+        <span>Arbëria</span>
+        <span>Lakrishtë</span>
+        <span>Veternik</span>
+        <span>Royal Mall</span>
+        <span>Albi Mall</span>
       </div>
-      <div class="grid">
+    </section>
 
-        <article class="card">
-          <div class="card-top"><div class="category">Fast food</div><div class="badge">-30%</div></div>
-          <h3>Burger King Qendër</h3>
-          <p class="offer">Kjuti Deal — BarbeKjut Whisky Chicken + Cheesy Balls 6 copë + pijë</p>
-          <div class="price"><span class="old">≈€16,40</span><span class="new">€11,47</span></div>
-          <div class="meta">Dërgesa 15–25 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Burger</div><div class="badge">-40%</div></div>
-          <h3>Bronx Burger</h3>
-          <p class="offer">Tuna Melt Deal — 2 Tuna Melt + 2 frëngji + 2 kola</p>
-          <div class="price"><span class="new">€13,98</span></div>
-          <div class="meta">Dërgesa 25–35 min · mbyllet të dielën</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Sushi</div><div class="badge">-30%</div></div>
-          <h3>SushiCo Kosova</h3>
-          <p class="offer">Zbritje -30% në porosi (maks. €4)</p>
-          <div class="price"><span class="new">Deri në -30%</span></div>
-          <div class="meta">Dërgesa 20–30 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Picë</div><div class="badge">-30%</div></div>
-          <h3>Proper Pizza Qendër</h3>
-          <p class="offer">Zbritje -30% në porosi (maks. €4)</p>
-          <div class="price"><span class="new">Deri në -30%</span></div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pastë</div><div class="badge">-30%</div></div>
-          <h3>Pasta Fasta Sheshi</h3>
-          <p class="offer">Zbritje -30% në porosi (maks. €4)</p>
-          <div class="price"><span class="new">Deri në -30%</span></div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Shëndetshëm</div><div class="badge">-30%</div></div>
-          <h3>MIXD Kitchen</h3>
-          <p class="offer">Mix'd Fiesta Boost — zbritje 30%</p>
-          <div class="price"><span class="new">Deri në -30%</span></div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Meksikane</div><div class="badge">-20%</div></div>
-          <h3>Mexican Restaurant Downtown</h3>
-          <p class="offer">Mexican Combo — zbritje 20%</p>
-          <div class="price"><span class="new">Deri në -20%</span></div>
-          <div class="meta">Dërgesa 20–30 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pastë</div><div class="badge">-20%</div></div>
-          <h3>Cheese Wheel</h3>
-          <p class="offer">Fettucine Beef combo — zbritje 20%</p>
-          <div class="price"><span class="new">Deri në -20%</span></div>
-          <div class="meta">Dërgesa 15–25 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Burger</div><div class="badge">-20%</div></div>
-          <h3>Pink Patty</h3>
-          <p class="offer">Pink Smash — zbritje 20%</p>
-          <div class="price"><span class="new">Deri në -20%</span></div>
-          <div class="meta">Dërgesa 25–35 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Aziatike</div><div class="badge">-20%</div></div>
-          <h3>Rice C</h3>
-          <p class="offer">Rice Combo — zbritje 20%</p>
-          <div class="price"><span class="new">Deri në -20%</span></div>
-          <div class="meta">Dërgesa 20–30 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Sanduiçe</div><div class="badge">-30%</div></div>
-          <h3>Papirun Qendër</h3>
-          <p class="offer">Tuna/Mozzarella Sandwich — zbritje 30% (maks. €4)</p>
-          <div class="price"><span class="old">€4,60</span><span class="new">≈€3,22</span></div>
-          <div class="meta">Dërgesa 15–25 min · mbyllet të dielën</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Sanduiçe</div><div class="badge">-30%</div></div>
-          <h3>Chop Sandwich Club</h3>
-          <p class="offer">Çdo sanduiç €6,99 — zbritje 30% (maks. €4)</p>
-          <div class="price"><span class="old">€6,99</span><span class="new">≈€4,30</span></div>
-          <div class="meta">Dërgesa 15–25 min · mbyllet të dielën</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Turke</div><div class="badge">-30%</div></div>
-          <h3>Istanbul Tatlises</h3>
-          <p class="offer">Lahmaçun — zbritje 30% (maks. €4)</p>
-          <div class="price"><span class="old">€2,00</span><span class="new">≈€1,40</span></div>
-          <div class="meta">Dërgesa 15–25 min · mbyllet të dielën</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Wok · Sushi</div><div class="badge">-20%</div></div>
-          <h3>Wokwok</h3>
-          <p class="offer">Rolla California/Philadelphia — -20% porosia e plotë</p>
-          <div class="price"><span class="old">€8,50</span><span class="new">≈€6,80</span></div>
-          <div class="meta">Dërgesa 20–30 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Friteri</div><div class="badge">-€6</div></div>
-          <h3>Krokante</h3>
-          <p class="offer">Happy Hour Combo €5,00 · -€6 në porosinë e parë</p>
-          <div class="price"><span class="new">€5,00</span></div>
-          <div class="meta">Dërgesa 15–25 min · mbyllet të dielën</div>
-        </article>
-
+    <section class="block" id="kontakt">
+      <h2>Kontakt</h2>
+      <div class="contact-links">
+        <a href="mailto:valon@ckapohajmesot.com">valon@ckapohajmesot.com</a>
+        <a href="mailto:info@ckapohajmesot.com">info@ckapohajmesot.com</a>
       </div>
-
-      <div class="zone-head" id="te-qafa">
-        <h2>Te Qafa</h2>
-        <span class="dist">≈1,5 km</span>
-      </div>
-      <div class="grid">
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pita · Gjiros</div><div class="badge">-33%</div></div>
-          <h3>Papa's Pita Qafa</h3>
-          <p class="offer">Student Offer — suxhuk, crunch pita, frëngji, sos, Fros Tea</p>
-          <div class="price"><span class="old">€9,70</span><span class="new">€6,50</span></div>
-          <div class="meta">Dërgesa 25–35 min · dërgesa €0</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pita · Gjiros</div><div class="badge">-35%</div></div>
-          <h3>Papa's Pita Qafa</h3>
-          <p class="offer">Korfu</p>
-          <div class="price"><span class="old">€6,20</span><span class="new">€4,00</span></div>
-          <div class="meta">Dërgesa 25–35 min · dërgesa €0</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pita · Gjiros</div><div class="badge">-33%</div></div>
-          <h3>Papa's Pita Qafa</h3>
-          <p class="offer">Mykonos</p>
-          <div class="price"><span class="old">€6,70</span><span class="new">€4,50</span></div>
-          <div class="meta">Dërgesa 25–35 min · dërgesa €0</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pita · Gjiros</div><div class="badge">-35%</div></div>
-          <h3>Papa's Pita Qafa</h3>
-          <p class="offer">Full House</p>
-          <div class="price"><span class="new">€10,50</span></div>
-          <div class="meta">Dërgesa 25–35 min · dërgesa €0</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pita · Burger</div><div class="badge">Fundjavë</div></div>
-          <h3>Papa's Pita Qafa</h3>
-          <p class="offer">Weekend Burger — Crunch + Classic beef + frëngji + sos</p>
-          <div class="price"><span class="new">€5,90</span></div>
-          <div class="meta">Vetëm fundjavë</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Grill</div><div class="badge">-40%</div></div>
-          <h3>Grill Sarajeva Te Qafa</h3>
-          <p class="offer">Deri -40% në artikuj të zgjedhur</p>
-          <div class="price"><span class="new">Deri në -40%</span></div>
-          <div class="meta">Dërgesa 15–25 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pulë</div><div class="badge">-€4</div></div>
-          <h3>Heb's te Qafa</h3>
-          <p class="offer">-€4 në porosinë e parë</p>
-          <div class="price"><span class="new">-€4 e para</span></div>
-        </article>
-
-      </div>
-
-      <div class="zone-head" id="pejton">
-        <h2>Pejton</h2>
-        <span class="dist">≈2 km</span>
-      </div>
-      <div class="grid">
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pulë</div><div class="badge">-14%</div></div>
-          <h3>KFC Pejton</h3>
-          <p class="offer">11 + 11 — 11 Hot Wings + 11 Crispy Strips</p>
-          <div class="price"><span class="old">€18,69</span><span class="new">€15,99</span></div>
-          <div class="meta">Dërgesa 20–30 min · dërgesa €0</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pulë</div><div class="badge">-19%</div></div>
-          <h3>KFC Pejton</h3>
-          <p class="offer">Duo Bucket</p>
-          <div class="price"><span class="old">€12,36</span><span class="new">€9,99</span></div>
-          <div class="meta">Dërgesa 20–30 min · dërgesa €0</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pulë</div><div class="badge">-€5</div></div>
-          <h3>KFC Pejton</h3>
-          <p class="offer">€5 zbritje në Hot Wings Bucket · -€4 porosia e parë</p>
-          <div class="price"><span class="new">-€5 Bucket</span></div>
-          <div class="meta">Dërgesa 20–30 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">BBQ</div><div class="badge">-15%</div></div>
-          <h3>Prishtina Smoke House</h3>
-          <p class="offer">Pastrami Combo — zbritje 15%</p>
-          <div class="price"><span class="new">Deri në -15%</span></div>
-          <div class="meta">Dërgesa 25–35 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Fast food</div><div class="badge">-30%</div></div>
-          <h3>Burger King Pejton</h3>
-          <p class="offer">Kjuti Deal — zbritje 30%</p>
-          <div class="price"><span class="new">Deri në -30%</span></div>
-          <div class="meta">Dërgesa 20–30 min</div>
-        </article>
-
-      </div>
-
-      <div class="zone-head" id="rruga-b">
-        <h2>Rruga B</h2>
-        <span class="dist">≈2,2 km</span>
-      </div>
-      <div class="grid">
-
-        <article class="card">
-          <div class="card-top"><div class="category">Picë</div><div class="badge">-20%</div></div>
-          <h3>Capvin 13</h3>
-          <p class="offer">Margherita Combo — zbritje 20% në artikuj të zgjedhur</p>
-          <div class="price"><span class="new">€8,50</span></div>
-          <div class="meta">Dërgesa 20–30 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pita · Gjiros</div><div class="badge">-35%</div></div>
-          <h3>Papa's Pita Rruga B</h3>
-          <p class="offer">Full House — zbritje 35%</p>
-          <div class="price"><span class="new">€10,50</span></div>
-          <div class="meta">Dërgesa 20–30 min · dërgesa €0</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Biftek</div><div class="badge">-40%</div></div>
-          <h3>Sarajeva Steak House Rruga B</h3>
-          <p class="offer">Jeff për Qeff — zbritje 40%</p>
-          <div class="price"><span class="new">Deri në -40%</span></div>
-          <div class="meta">Dërgesa 20–30 min</div>
-        </article>
-
-      </div>
-
-      <div class="zone-head" id="dardani">
-        <h2>Dardani</h2>
-        <span class="dist">≈2,5 km</span>
-      </div>
-      <div class="grid">
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pulë</div><div class="badge">-30%</div></div>
-          <h3>Gjiks&amp;Chicks</h3>
-          <p class="offer">Chicken Wrap — zbritje 30% (maks. €4)</p>
-          <div class="price"><span class="old">€4,50</span><span class="new">≈€3,15</span></div>
-          <div class="meta">Dërgesa 20–30 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pulë</div><div class="badge">Lunxh</div></div>
-          <h3>Gjiks&amp;Chicks</h3>
-          <p class="offer">Business Lunch — Sando / Crunchy Wrap / Caesar</p>
-          <div class="price"><span class="new">€5,50</span></div>
-          <div class="meta">Dërgesa 20–30 min · hapur 11:00–23:00</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Italiane</div><div class="badge">-20%</div></div>
-          <h3>Osteria Linda · Garibaldi</h3>
-          <p class="offer">Keto Combo — -20% porosia e plotë</p>
-          <div class="price"><span class="old">€9,20</span><span class="new">≈€7,36</span></div>
-          <div class="meta">Dërgesa 15–25 min · mbyllet të dielën</div>
-        </article>
-
-      </div>
-
-      <div class="zone-head" id="bregu">
-        <h2>Bregu i Diellit</h2>
-        <span class="dist">≈2,8 km</span>
-      </div>
-      <div class="grid">
-
-        <article class="card">
-          <div class="card-top"><div class="category">Bakery</div><div class="badge">-20%</div></div>
-          <h3>Artizan</h3>
-          <p class="offer">Combo Pule — ofertë e re</p>
-          <div class="price"><span class="old">€5,50</span><span class="new">€4,40</span></div>
-          <div class="meta">Dërgesa 20–30 min · -20% porosia e plotë</div>
-        </article>
-
-      </div>
-
-      <div class="zone-head" id="arberia">
-        <h2>Arbëria</h2>
-        <span class="dist">≈2,5 km</span>
-      </div>
-      <div class="grid">
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pulë</div><div class="badge">-€4</div></div>
-          <h3>KFC Arberi</h3>
-          <p class="offer">-€4 në porosinë e parë · €5 zbritje në Hot Wings Bucket</p>
-          <div class="price"><span class="new">-€4 e para</span></div>
-          <div class="meta">Dërgesa 25–35 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Fast food</div><div class="badge">-30%</div></div>
-          <h3>Burger King Arbëria</h3>
-          <p class="offer">Kjuti Deal — zbritje 30%</p>
-          <div class="price"><span class="new">Deri në -30%</span></div>
-          <div class="meta">Dërgesa 20–30 min</div>
-        </article>
-
-      </div>
-
-      <div class="zone-head" id="lakrishte">
-        <h2>Lakrishtë</h2>
-        <span class="dist">≈3 km</span>
-      </div>
-      <div class="grid">
-
-        <article class="card">
-          <div class="card-top"><div class="category">Bowl · Sallatë</div><div class="badge">-30%</div></div>
-          <h3>Green &amp; Protein</h3>
-          <p class="offer">-30% në artikujt e zgjedhur</p>
-          <div class="price"><span class="new">Deri në -30%</span></div>
-          <div class="meta">Dërgesa 25–35 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Burger</div><div class="badge">-11%</div></div>
-          <h3>Fika Eatery · Bashkim Fehmiu</h3>
-          <p class="offer">Chicken Burger Combo — ofertë e re</p>
-          <div class="price"><span class="old">€9,09</span><span class="new">€8,10</span></div>
-          <div class="meta">Dërgesa 25–35 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Waffle</div><div class="badge">-20%</div></div>
-          <h3>Waffle Fun</h3>
-          <p class="offer">Love Triangle — 3 waffle për ta ndarë</p>
-          <div class="price"><span class="old">€20,00</span><span class="new">≈€16,00</span></div>
-          <div class="meta">Dërgesa 20–30 min · hapet 12:00</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Tradicionale</div><div class="badge">-20%</div></div>
-          <h3>Te Nazi</h3>
-          <p class="offer">-20% në porosinë e plotë</p>
-          <div class="price"><span class="new">Deri në -20%</span></div>
-          <div class="meta">Dërgesa 15–25 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Picë</div><div class="badge">-20%</div></div>
-          <h3>Spirale Pizza &amp; Panuozzo</h3>
-          <p class="offer">Trizza — 3 pica + Coca Cola 1,25L</p>
-          <div class="price"><span class="old">€15,30</span><span class="new">≈€12,24</span></div>
-          <div class="meta">Dërgesa 20–30 min · hapur deri 04:00</div>
-        </article>
-
-      </div>
-
-      <div class="zone-head" id="veternik">
-        <h2>Veternik</h2>
-        <span class="dist">≈3,5 km</span>
-      </div>
-      <div class="grid">
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pulë</div><div class="badge">-€4</div></div>
-          <h3>KFC Veternik</h3>
-          <p class="offer">-€4 në porosinë e parë</p>
-          <div class="price"><span class="new">-€4 e para</span></div>
-          <div class="meta">Dërgesa 25–35 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Fast food</div><div class="badge">-30%</div></div>
-          <h3>Burger King Veternik</h3>
-          <p class="offer">Kjuti Deal — zbritje 30%</p>
-          <div class="price"><span class="new">Deri në -30%</span></div>
-          <div class="meta">Dërgesa 25–35 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Kuzhinë e hapur</div><div class="badge free">Dërgesa €0</div></div>
-          <h3>Garden Open Kitchen</h3>
-          <p class="offer">Supë e ditës — dërgesa falas (kufizuar)</p>
-          <div class="price"><span class="new">€2,50</span></div>
-          <div class="meta">Dërgesa 35–45 min · Kupohajna</div>
-        </article>
-
-      </div>
-
-      <div class="zone-head" id="royal-mall">
-        <h2>Royal Mall</h2>
-        <span class="dist">≈4 km</span>
-      </div>
-      <div class="grid">
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pulë</div><div class="badge">-€4</div></div>
-          <h3>KFC Royal Mall</h3>
-          <p class="offer">-€4 në porosinë e parë</p>
-          <div class="price"><span class="new">-€4 e para</span></div>
-          <div class="meta">Dërgesa 30–40 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Fast food</div><div class="badge">-30%</div></div>
-          <h3>Burger King Royal</h3>
-          <p class="offer">Kjuti Deal — zbritje 30%</p>
-          <div class="price"><span class="new">Deri në -30%</span></div>
-          <div class="meta">Dërgesa 25–35 min</div>
-        </article>
-
-      </div>
-
-      <div class="zone-head" id="albi-mall">
-        <h2>Albi Mall</h2>
-        <span class="dist">≈5 km</span>
-      </div>
-      <div class="grid">
-
-        <article class="card">
-          <div class="card-top"><div class="category">Pulë</div><div class="badge">-30%</div></div>
-          <h3>Popeyes Albi Mall</h3>
-          <p class="offer">September Combo — zbritje 30%</p>
-          <div class="price"><span class="new">Deri në -30%</span></div>
-          <div class="meta">Dërgesa 30–40 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Biftek</div><div class="badge">-40%</div></div>
-          <h3>Sarajeva Steak House Albi Mall</h3>
-          <p class="offer">Jeff për Qeff — zbritje 40%</p>
-          <div class="price"><span class="new">Deri në -40%</span></div>
-          <div class="meta">Dërgesa 30–40 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Picë</div><div class="badge">-40%</div></div>
-          <h3>Pano Pizza</h3>
-          <p class="offer">Oferta n'Tavë — 2 Tavë Vegjetariane + sallatë mix + 2 Tomeloriz + 2 kola</p>
-          <div class="price"><span class="new">€19,00</span></div>
-          <div class="meta">Dërgesa 35–45 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Keto</div><div class="badge">-20%</div></div>
-          <h3>Delish Albi Mall</h3>
-          <p class="offer">Keto Offer — zbritje 20% në Keto combo</p>
-          <div class="price"><span class="new">€9,90</span></div>
-          <div class="meta">Dërgesa 30–40 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Friteri</div><div class="badge free">Dërgesa €0</div></div>
-          <h3>Frix Albi Mall</h3>
-          <p class="offer">COMBO 1/2 — burger/sliders + fitil + pepsi · dërgesa falas</p>
-          <div class="price"><span class="new">€4,99</span></div>
-          <div class="meta">Dërgesa 35–45 min · Kupohajna</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Grill</div><div class="badge">-40%</div></div>
-          <h3>Grill Sarajeva Albi Mall</h3>
-          <p class="offer">Deri -40% në artikuj të zgjedhur</p>
-          <div class="price"><span class="new">Deri në -40%</span></div>
-          <div class="meta">Dërgesa 30–40 min</div>
-        </article>
-
-        <article class="card">
-          <div class="card-top"><div class="category">Eatery</div><div class="badge">-25%</div></div>
-          <h3>Pastao Eatery</h3>
-          <p class="offer">Penne/Risotto/Al Pesto Offer — me tiramisu + pepsi</p>
-          <div class="price"><span class="new">€8,40</span></div>
-          <div class="meta">Dërgesa 20–30 min · deri 01:30</div>
-        </article>
-
-      </div>
-
     </section>
 
     <footer>
       <div class="footer-inner">
-        <a href="mailto:valon@ckapohajmesot.com">valon@ckapohajmesot.com</a>
-        <div class="copy">Burimi: Wolt &amp; Kupohajna · Shtator 2026 — ofertat mund të ndryshojnë pa njoftim. Çmimet e afërta shënohen me ≈. © 2010–2026 Çka po hajmë sot?</div>
+        <a href="mailto:info@ckapohajmesot.com">info@ckapohajmesot.com</a>
+        <div class="copy">© 2010–2026 Çka po hajmë sot?</div>
       </div>
     </footer>
   </div>
