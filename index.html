@@ -1,317 +1,118 @@
 <!DOCTYPE html>
-<html lang="sq">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Çka po hajmë sot?</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CKA PO HAJME SOT</title>
   <meta name="description" content="Çka po hajmë sot? — ofertat ditore nga restorantet e Prishtinës, të grupuara sipas zonave, brenda 5 km." />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
-      --text: #1a1a1a;
-      --muted: #6b6b6b;
-      --accent: #e8641c;
-      --accent-soft: #fdeee5;
-      --border: #eaeaea;
-      --bg: #ffffff;
+      --bg: #0e0e10;
+      --text: #ececec;
+      --subtle: #8a8a8a;
+      --line: #2a2a2a;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
+    html, body { height: 100%; }
 
     body {
-      font-family: 'Inter', sans-serif;
       background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Header */
-    header { padding: 2.5rem 0 0; }
-
-    .header-inner {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1.75rem;
-    }
-
-    .brand {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.4rem, 4vw, 1.9rem);
-      font-weight: 900;
-      letter-spacing: -0.01em;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .brand em { font-style: italic; font-weight: 700; }
-
-    .tagline {
-      font-size: 0.85rem;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    /* Hero */
-    .hero {
-      padding: 4rem 0 3.5rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 6vw, 3.25rem);
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.01em;
-    }
-    .hero h1 em { font-style: italic; font-weight: 700; color: var(--accent); }
-
-    .hero p {
-      margin-top: 1rem;
-      font-size: clamp(1rem, 2.5vw, 1.15rem);
-      font-weight: 300;
-      color: var(--muted);
-      max-width: 36rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .stats {
-      margin-top: 1.75rem;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .stats span {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: var(--accent);
-      background: var(--accent-soft);
-      border-radius: 999px;
-      padding: 0.35rem 0.9rem;
-    }
-
-    /* Sections */
-    section.block { padding: 2.5rem 0; }
-
-    .block h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    .block p {
-      color: var(--muted);
-      font-size: 0.98rem;
-      max-width: 40rem;
-    }
-
-    /* How it works */
-    .steps {
-      margin-top: 1.25rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .step {
-      display: flex;
-      gap: 1rem;
-      align-items: baseline;
-    }
-
-    .step .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: var(--accent);
-      min-width: 2rem;
-    }
-
-    .step h3 {
-      font-size: 0.98rem;
-      font-weight: 600;
-    }
-
-    .step p {
-      font-size: 0.88rem;
-      margin-top: 0.15rem;
-    }
-
-    /* Zones */
-    .zones-list {
-      margin-top: 1.25rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .zones-list span {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 0.4rem 0.95rem;
-    }
-
-    /* Contact */
-    .contact-links {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .contact-links a {
-      color: var(--text);
-      font-size: 0.98rem;
-      text-decoration: none;
-      width: fit-content;
-    }
-    .contact-links a:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 2rem;
-      border-top: 1px solid var(--border);
-      padding: 2rem 0 2.5rem;
-    }
-
-    .footer-inner {
+      font-family: 'DM Sans', sans-serif;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem;
+      justify-content: center;
+      min-height: 100vh;
     }
 
-    footer a {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 480px;
+      width: 90vw;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: appear 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+    }
+
+    .name {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 200;
       color: var(--text);
-      font-size: 0.9rem;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .rule {
+      width: 100%;
+      height: 1px;
+      background: var(--line);
+      margin-bottom: 20px;
+    }
+
+    .info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text);
+      flex-shrink: 0;
+    }
+
+    .info-row a,
+    .info-row span {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--text);
       text-decoration: none;
-    }
-    footer a:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
-    .copy {
-      font-size: 0.78rem;
-      color: var(--muted);
-      max-width: 26rem;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 1px;
+      transition: border-color 0.25s ease;
     }
 
-    @media (max-width: 600px) {
-      .hero { padding: 3rem 0 2.5rem; }
+    .info-row span {
+      color: var(--subtle);
+    }
+
+    .info-row a:hover {
+      border-color: var(--text);
+    }
+
+    @keyframes appear {
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
+  <div class="wrapper">
+    <div class="name">CKA PO HAJME SOT</div>
 
-  <div class="container">
-    <header>
-      <div class="header-inner">
-        <div class="brand">Çka po <em>hajmë</em> sot?</div>
-        <div class="tagline">Ofertat përreth meje</div>
-      </div>
-    </header>
+    <div class="rule"></div>
 
-    <section class="hero">
-      <h1>Çka po <em>hajmë</em> sot?</h1>
-      <p>Një faqe e thjeshtë që mbledh ofertat ditore nga restorantet e Prishtinës dhe i grupon sipas zonave — brenda një rreze 5 km.</p>
-      <div class="stats">
-        <span>Që nga 2010</span>
-        <span>11 zona</span>
-        <span>brenda 5 km</span>
-      </div>
-    </section>
-
-    <section class="block" id="rreth-nesh">
-      <h2>Rreth nesh</h2>
-      <p>Çka po hajmë sot? është një projekt i themeluar në 2010 me një qëllim të thjeshtë: të tregojë çka po hajmë sot. Faqja mbledh ofertat aktive nga restorantet e Prishtinës, i grupon sipas zonave dhe i paraqet në një vend të vetëm — pa kërkuar, pa humbur kohë. Më saktë: ndihmon të gjesh ofertën më të mirë pranë teje, sot.</p>
-    </section>
-
-    <section class="block" id="si-funksionon">
-      <h2>Si funksionon</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="num">1</div>
-          <div>
-            <h3>Zgjidh zonën</h3>
-            <p>Ofertat grupohen sipas zonave të Prishtinës, fillimisht atyre më të afërta me ty.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="num">2</div>
-          <div>
-            <h3>Krahasoni ofertat</h3>
-            <p>Shiko çmimet, zbritjet dhe kohën e dërgesës — të gjitha në të njëjtën faqe.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="num">3</div>
-          <div>
-            <h3>Porosit</h3>
-            <p>Porositë bëhen direkt nëpërmjet platformave Wolt dhe Kupohajna.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="block" id="zonat">
-      <h2>Zona të mbuluara</h2>
-      <p>Ofertat mbulohen brenda një rreze 5 km nga qendra e Prishtinës.</p>
-      <div class="zones-list">
-        <span>Qendër</span>
-        <span>Te Qafa</span>
-        <span>Pejton</span>
-        <span>Rruga B</span>
-        <span>Dardani</span>
-        <span>Bregu i Diellit</span>
-        <span>Arbëria</span>
-        <span>Lakrishtë</span>
-        <span>Veternik</span>
-        <span>Royal Mall</span>
-        <span>Albi Mall</span>
-      </div>
-    </section>
-
-    <section class="block" id="kontakt">
-      <h2>Kontakt</h2>
-      <div class="contact-links">
+    <div class="info-block">
+      <div class="info-row">
+        <div class="dot"></div>
         <a href="mailto:valon@ckapohajmesot.com">valon@ckapohajmesot.com</a>
-        <a href="mailto:info@ckapohajmesot.com">info@ckapohajmesot.com</a>
       </div>
-    </section>
-
-    <footer>
-      <div class="footer-inner">
-        <a href="mailto:info@ckapohajmesot.com">info@ckapohajmesot.com</a>
-        <div class="copy">© 2010–2026 Çka po hajmë sot?</div>
-      </div>
-    </footer>
+    </div>
   </div>
-
 </body>
 </html>
